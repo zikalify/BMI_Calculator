@@ -62,7 +62,7 @@ public class BMIMain extends ActionBarActivity {
     private String interpretBMI(double bmi) {
 
         if (bmi < 16) {
-            return "Severely underweight";
+            return "Severely Underweight";
         } else if (bmi < 18.5) {
             return "Underweight";
         } else if (bmi < 25) {
