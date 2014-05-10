@@ -34,9 +34,20 @@ public class BMIMain extends ActionBarActivity {
             EditText heightNum = (EditText)findViewById(R.id.heightNum);
             TextView resultLabel = (TextView)findViewById(R.id.resultLabel);
 
+            double weight;
+            weight = 0;
+            double height;
+            height = 0;
+
             // get the users values from the widget references
-            double weight = Double.parseDouble(weightNum.getText().toString());
-            double height = Double.parseDouble(heightNum.getText().toString());
+            if (!(weightNum.getText().toString().equals(""))) {
+                weight = Double.parseDouble(weightNum.getText().toString());
+            }
+
+            if (!(heightNum.getText().toString().equals(""))) {
+                height = Double.parseDouble(heightNum.getText().toString());
+            }
+
 
             // calculate bmi value
             double bmi = calculateBMI(weight, height);
@@ -48,31 +59,33 @@ public class BMIMain extends ActionBarActivity {
             String bmiInterpretation = interpretBMI(bmi);
 
             // now set the value in the results text
-            resultLabel.setText(newBMI + "\nYou are " + bmiInterpretation);
+            resultLabel.setText(newBMI + "\n" + bmiInterpretation);
         }
     }
 
     // the formula to calculate the BMI index
     private double calculateBMI (double weight, double height) {
         // convert values to metric
-        return (double) (((weight/2.2046) / (height*0.0254)) / (height*0.0254));
+            return (double) (((weight / 2.2046) / (height * 0.0254)) / (height * 0.0254));
     }
 
     // interpret what BMI means
     private String interpretBMI(double bmi) {
 
         if (bmi < 16) {
-            return "Severely Underweight";
+            return "You are Severely Underweight";
         } else if (bmi < 18.5) {
-            return "Underweight";
+            return "You are Underweight";
         } else if (bmi < 25) {
-            return "Normal";
+            return "You are Normal";
         }else if (bmi < 30) {
-            return "Overweight";
+            return " You are Overweight";
         }else if (bmi < 40) {
-            return "Obese";
+            return "You are Obese";
+        }else if (bmi >= 40) {
+            return "You are Morbidly Obese";
         }else {
-            return "Morbidly Obese";
+            return "Enter your Details";
         }
     }
 
