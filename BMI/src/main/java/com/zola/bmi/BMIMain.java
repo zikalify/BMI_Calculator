@@ -79,7 +79,7 @@ public class BMIMain extends ActionBarActivity {
         } else if (bmi < 25) {
             return "You are Normal";
         }else if (bmi < 30) {
-            return " You are Overweight";
+            return "You are Overweight";
         }else if (bmi < 40) {
             return "You are Obese";
         }else if (bmi >= 40) {
