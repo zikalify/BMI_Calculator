@@ -59,7 +59,7 @@ public class BMIMain extends ActionBarActivity {
             String bmiInterpretation = interpretBMI(bmi);
 
             // now set the value in the results text
-            resultLabel.setText(newBMI + "\n" + bmiInterpretation);
+            resultLabel.setText("BMI Score = " + newBMI + "\n" + bmiInterpretation);
         }
     }
 
