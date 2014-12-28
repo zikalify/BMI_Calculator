@@ -17,7 +17,8 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="33dp" />
+        android:layout_marginTop="33dp"
+        android:textIsSelectable="false" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -26,9 +27,9 @@
         android:text="Weight(Ibs)"
         android:layout_toLeftOf="@+id/weightNum"
         android:layout_alignTop="@+id/weightNum"
-        android:layout_above="@+id/heightNum"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/heightNum" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -69,8 +70,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/EmptyString"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_marginLeft="42dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_marginLeft="20dp"
         android:layout_below="@+id/calcBMI"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
