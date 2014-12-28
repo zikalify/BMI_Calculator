@@ -17,7 +17,8 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="32dp" />
+        android:layout_marginTop="32dp"
+        android:textSize="20dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -29,7 +30,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginLeft="20dp"
-        android:layout_above="@+id/heightNum" />
+        android:layout_above="@+id/heightNum"
+        android:textSize="23dp" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -40,7 +42,8 @@
         android:layout_marginTop="32dp"
         android:layout_below="@+id/weightNum"
         android:layout_alignRight="@+id/calcBMI"
-        android:layout_alignEnd="@+id/calcBMI" />
+        android:layout_alignEnd="@+id/calcBMI"
+        android:textSize="20dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -52,7 +55,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginLeft="20dp"
-        android:text='Height(")' />
+        android:text='Height(")'
+        android:textSize="23dp" />
 
     <Button
         android:layout_width="wrap_content"
@@ -63,7 +67,8 @@
         android:onClick="calculateClickHandler"
         android:layout_below="@+id/heightNum"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:textSize="20dp" />
 
     <TextView
         android:id="@+id/resultLabel"
@@ -71,10 +76,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/EmptyString"
-        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="20dp"
         android:layout_marginLeft="20dp"
         android:layout_below="@+id/calcBMI"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textColor="#73CEFF" />
 
 </RelativeLayout>
