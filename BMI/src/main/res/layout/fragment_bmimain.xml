@@ -12,13 +12,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="number"
-        android:ems="10"
+        android:ems="6"
         android:id="@+id/weightNum"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="33dp"
-        android:textIsSelectable="false" />
+        android:layout_marginTop="32dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -29,13 +28,14 @@
         android:layout_alignTop="@+id/weightNum"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_marginLeft="20dp"
         android:layout_above="@+id/heightNum" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="number"
-        android:ems="10"
+        android:ems="6"
         android:id="@+id/heightNum"
         android:layout_marginTop="32dp"
         android:layout_below="@+id/weightNum"
@@ -51,6 +51,7 @@
         android:layout_alignTop="@+id/heightNum"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_marginLeft="20dp"
         android:text='Height(")' />
 
     <Button
@@ -58,7 +59,7 @@
         android:layout_height="wrap_content"
         android:text="Calculate BMI"
         android:id="@+id/calcBMI"
-        android:layout_marginTop="21dp"
+        android:layout_marginTop="19dp"
         android:onClick="calculateClickHandler"
         android:layout_below="@+id/heightNum"
         android:layout_alignParentRight="true"
