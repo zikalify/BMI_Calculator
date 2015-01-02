@@ -7,10 +7,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
+
+import java.text.DecimalFormat;
 
 
 public class BMIMain extends ActionBarActivity {
+
+    //private Spinner weightSpinner, heightSpinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +27,7 @@ public class BMIMain extends ActionBarActivity {
                     .add(R.id.container, new PlaceholderFragment())
                     .commit();
         }
+
     }
 
     public void calculateClickHandler(View view) {
@@ -33,6 +39,11 @@ public class BMIMain extends ActionBarActivity {
             EditText weightNum = (EditText)findViewById(R.id.weightNum);
             EditText heightNum = (EditText)findViewById(R.id.heightNum);
             TextView resultLabel = (TextView)findViewById(R.id.resultLabel);
+
+            Spinner weightSpinner = (Spinner)findViewById(R.id.weightSpinner);
+            Spinner heightSpinner = (Spinner)findViewById(R.id.heightSpinner);
+            String weightSpinnerString = weightSpinner.getSelectedItem().toString();
+            String heightSpinnerString = heightSpinner.getSelectedItem().toString();
 
             double weight;
             weight = 0;
@@ -48,18 +59,33 @@ public class BMIMain extends ActionBarActivity {
                 height = Double.parseDouble(heightNum.getText().toString());
             }
 
+            double bmi;
 
-            // calculate bmi value
-            double bmi = calculateBMI(weight, height);
+            // calculate bmi value - pounds and inch
+            if (weightSpinnerString.equals("Pounds") && heightSpinnerString.equals("Inch")) {
+                bmi = calculateBMI(weight, height);
+            } else if (weightSpinnerString.equals("Kilograms") &&
+                    heightSpinnerString.equals("Inch")){
+                weight = weight * 2.205;
+                bmi = calculateBMI(weight, height);
+            } else if (weightSpinnerString.equals("Pounds") && heightSpinnerString.equals("CM")){
+                height = height / 2.54;
+                bmi = calculateBMI(weight, height);
+            } else {
+                weight = weight * 2.205;
+                height = height / 2.54;
+                bmi = calculateBMI(weight, height);
+            }
 
             // round to 2 digits
             double newBMI = Math.round(bmi*100.0)/100.0;
+            DecimalFormat f = new DecimalFormat("##.00");
 
             // interpret the meaning of the bmi value
             String bmiInterpretation = interpretBMI(bmi);
 
             // now set the value in the results text
-            resultLabel.setText("BMI Score = " + newBMI + "\n" + bmiInterpretation);
+            resultLabel.setText("BMI Score = " + f.format(newBMI) + "\n" + bmiInterpretation);
         }
     }
 
