@@ -20,14 +20,9 @@ dependencies {
     compile 'com.android.support:appcompat-v7:+'
 }
 
-buildscript {
-    repositories {
-        mavenCentral()
-        maven {
-            url 'https://plugins.gradle.org/m2/'
-        }
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.3'
+repositories {
+    jcenter()
+    maven {
+        url 'https://maven.google.com'
     }
 }
