@@ -1,6 +1,6 @@
 package com.zola.bmi;
 
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,7 +13,7 @@ import android.widget.TextView;
 import java.text.DecimalFormat;
 
 
-public class BMIMain extends ActionBarActivity {
+public class BMIMain extends AppCompatActivity {
 
     //private Spinner weightSpinner, heightSpinner;
 
