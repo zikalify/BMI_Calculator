@@ -78,7 +78,7 @@ public class BMIMain extends AppCompatActivity {
             }
 
             // round to 2 digits
-            double newBMI = Math.round(bmi*100.0)/100.0;
+            double newBMI = Math.round(bmi*100)/100;
             DecimalFormat f = new DecimalFormat("##.00");
 
             // interpret the meaning of the bmi value
@@ -111,7 +111,7 @@ public class BMIMain extends AppCompatActivity {
         }else if (bmi >= 40) {
             return "You are Morbidly Obese";
         }else {
-            return "Enter your Details";
+            return "Error calculating please enter your Details";
         }
     }
 
