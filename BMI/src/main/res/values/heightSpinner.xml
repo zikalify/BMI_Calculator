@@ -2,8 +2,8 @@
 <resources>
 
 <string-array name="heightSpinnerString">
-        <item>Inch</item>
         <item>CM</item>
+        <item>Inch</item>
     </string-array>
 
 </resources>

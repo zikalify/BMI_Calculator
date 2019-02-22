@@ -79,7 +79,7 @@ public class BMIMain extends AppCompatActivity {
 
             // round to 2 digits
             double newBMI = Math.round(bmi*100.0)/100.0;
-            DecimalFormat f = new DecimalFormat("##.00");
+            DecimalFormat f = new DecimalFormat("##.0");
 
             // interpret the meaning of the bmi value
             String bmiInterpretation = interpretBMI(bmi);
