@@ -1,7 +1,4 @@
-Description: Simple BMI calculator, works out your BMI based on the weight and height you enter. Results are the same as the calculator provided by the UK's NHS.
-
-Simple BMI calculator
-Copyright (C) <2014-2017>  <zikalify>
+Description: BMI Calculator, works out your BMI based on the weight and height you enter. Results are the same as the calculator provided by the UK's NHS.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
