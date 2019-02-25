@@ -15,8 +15,6 @@ import java.text.DecimalFormat;
 
 public class BMIMain extends AppCompatActivity {
 
-    //private Spinner weightSpinner, heightSpinner;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,13 +60,13 @@ public class BMIMain extends AppCompatActivity {
             double bmi;
 
             // calculate bmi value - pounds and inch
-            if (weightSpinnerString.equals("Pounds") && heightSpinnerString.equals("Inch")) {
+            if (weightSpinnerString.equals("Pounds") && heightSpinnerString.equals("Inches")) {
                 bmi = calculateBMI(weight, height);
             } else if (weightSpinnerString.equals("Kilograms") &&
-                    heightSpinnerString.equals("Inch")){
+                    heightSpinnerString.equals("Inches")){
                 weight = weight * 2.205;
                 bmi = calculateBMI(weight, height);
-            } else if (weightSpinnerString.equals("Pounds") && heightSpinnerString.equals("CM")){
+            } else if (weightSpinnerString.equals("Pounds") && heightSpinnerString.equals("Centimetres")){
                 height = height / 2.54;
                 bmi = calculateBMI(weight, height);
             } else {
@@ -77,15 +75,15 @@ public class BMIMain extends AppCompatActivity {
                 bmi = calculateBMI(weight, height);
             }
 
-            // round to 2 digits
-            double newBMI = Math.round(bmi*100.0)/100.0;
+            // round to 1 digit
+            double newBMI = Math.round(bmi*10.0)/10.0;
             DecimalFormat f = new DecimalFormat("##.0");
 
             // interpret the meaning of the bmi value
-            String bmiInterpretation = interpretBMI(bmi);
+            String bmiInterpretation = interpretBMI(newBMI);
 
             // now set the value in the results text
-            resultLabel.setText("BMI Score = " + f.format(newBMI) + "\n" + bmiInterpretation);
+            resultLabel.setText("BMI Score = " + newBMI + "\n" + bmiInterpretation);
         }
     }
 
@@ -98,46 +96,21 @@ public class BMIMain extends AppCompatActivity {
     // interpret what BMI means
     private String interpretBMI(double bmi) {
 
-        if (bmi < 16) {
-            return "You are Severely Underweight";
+        if (bmi == 0) {
+            return "Enter your details";
         } else if (bmi < 18.5) {
-            return "You are Underweight";
+            return "You are underweight";
         } else if (bmi < 25) {
-            return "You are Normal";
-        }else if (bmi < 30) {
-            return "You are Overweight";
-        }else if (bmi < 40) {
-            return "You are Obese";
-        }else if (bmi >= 40) {
-            return "You are Morbidly Obese";
-        }else {
-            return "Enter your Details";
+            return "You are normal weight";
+        } else if (bmi < 30) {
+            return "You are overweight";
+        } else if (bmi < 40) {
+            return "You are obese";
+        } else {
+            return "You are severely obese";
         }
     }
 
-/*    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.bmimain, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }*/
-
-    /**
-     * A placeholder fragment containing a simple view.
-     */
     public static class PlaceholderFragment extends Fragment {
 
         public PlaceholderFragment() {
