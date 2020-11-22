@@ -101,7 +101,7 @@ public class BMIMain extends AppCompatActivity {
         } else if (bmi < 18.5) {
             return "You are underweight";
         } else if (bmi < 25) {
-            return "You are normal weight";
+            return "You are a healthy weight";
         } else if (bmi < 30) {
             return "You are overweight";
         } else if (bmi < 40) {
