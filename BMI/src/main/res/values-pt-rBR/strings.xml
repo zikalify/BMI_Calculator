@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Calculadora IMC</string>
+    <string name="scale">Abaixo do peso:    Menos de 20\nPeso normal:       20 - 25\nSobrepeso:
+        25-30\nObeso:                     30 - 40\nObesidade mórbida: Mais de 40</string>
+    <string name="action_settings">Configurações</string>
+    <string name="EmptyString"></string>
+
+</resources>
